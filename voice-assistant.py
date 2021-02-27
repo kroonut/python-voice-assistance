@@ -32,9 +32,9 @@ def record_audio(ask=False):
             audio = data.listen(source,timeout=10 ,phrase_time_limit=10)
             voice_data = ''
             try:
-                voice_data = data.recognize_google(audio, None,'th')
+                voice_data = data.recognize_google(audio, None,'en')
                 print('คุณพูดว่า : ',voice_data)
-                trans_to_eng = Lam.translate(voice_data, src='th', dest='en')
+                trans_to_eng = Lam.translate(voice_data, src='en', dest='th')
                 print('แปล : ',f'{trans_to_eng.text}')
                 print('-----------------------------------------')
                 trans_to_eng = trans_to_eng.text
